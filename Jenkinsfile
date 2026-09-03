@@ -15,9 +15,9 @@ pipeline {
 	}
 stage('Use Credential') {
     steps {
-        withCredentials([usernamePassword(credentialsId: 'secret', usernameVariable: 'MY_USER', passwordVariable: 'MY_SECRET')]) {
-            sh 'echo "Credential is for pipeline"'
-        }
+	withCredentials([string(credentialsId: 'demo-secret', variable: 'MY_SECRET')]) {
+    		sh 'some-command --token "$MY_SECRET"'
+}
     }
 }
      }
