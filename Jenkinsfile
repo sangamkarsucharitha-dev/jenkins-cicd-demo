@@ -15,7 +15,7 @@ pipeline {
 	}
 	stage('Use Credential') {
 	    steps {
-	       withCredentials([Istring(credentialId:'secret', variable: 'MY_SECRET')] {
+	       withCredentials([Istring(credentialId:'secret', variable: 'MY_SECRET')]) {
 			   sh 'echo "Credential is for pipeline"'
 }
 }
