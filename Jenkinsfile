@@ -13,6 +13,13 @@ pipeline {
 		echo 'Running Tests - Webhook Test'
 	    }
 	}
+	stage('Use Credential') {
+	    steps {
+	       withCredentials([Istring(credentialId:'demo-secret', variable: 'MY_SECRET')] {
+			   sh 'echo "Credential is for pipeline"'
+}
+}
+}
      }
 	
      post {
