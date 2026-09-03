@@ -10,7 +10,7 @@ pipeline {
         
         stage('Test') {
 	    steps {
-		echo 'Running Tests - Webhook Tests'
+		echo 'Running Tests - Webhook Test'
 	    }
 	}
      }
