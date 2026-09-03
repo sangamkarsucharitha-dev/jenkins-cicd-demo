@@ -16,7 +16,7 @@ pipeline {
 stage('Use Credential') {
     steps {
 	withCredentials([string(credentialsId: 'demo-secret', variable: 'MY_SECRET')]) {
-    		sh 'some-command --token "$MY_SECRET"'
+    		sh 'echo --token "$MY_SECRET"'
 }
     }
 }
